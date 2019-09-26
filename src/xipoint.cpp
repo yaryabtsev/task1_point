@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Module Name:  xipoint.h/cpp
-// Authors:      Ryabtsev Yaroslav
-// Version:      0.2.2
-// Date:         26.09.2017
+// Authors:      Sergey Shershakov
+// Version:      0.2.1
+// Date:         08.09.2017
 //
 // This is a part of the course "Algorithms and Data Structures" 
 // provided by  the School of Software Engineering of the Faculty 
@@ -16,28 +16,6 @@
 #include <cmath>
 
 namespace xi {
-
-    // Point class implementation
-    Point::Point(int x, int y) : _x(x), _y(y) {}
-
-    void Point::shift(int xSh, int ySh) {
-        setX(getX() + xSh);
-        setY(getY() + ySh);
-    }
-
-    void Point::shift(int shf) {
-        shift(shf, shf);
-    }
-
-    void Point::shift(const xi::Point &pt) {
-        shift(pt.getX(), pt.getY());
-    }
-
-    double Point::dist(const xi::Point &other) const {
-        return sqrt(
-                (other.getX() - getX()) * (other.getX() - getX())
-                + (other.getY() - getY()) * (other.getY() - getY()));
-    }
 
     int Point::getX() const { return _x; }
 
@@ -138,4 +116,5 @@ namespace xi {
         _arr = newArray;
         _size = n;
     }
+
 } // namespace xi {
