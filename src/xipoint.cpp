@@ -108,13 +108,13 @@ namespace xi {
         return _size;
     }
 
-    Point *PointArray::get(xi::PointArray::Uint pos) {
+    Point* PointArray::get(xi::PointArray::Uint pos) {
         if (pos >= _size)  // validity check
             return nullptr;
         return _arr + pos;
     }
 
-    const Point *PointArray::get(xi::PointArray::Uint pos) const {
+    const Point* PointArray::get(xi::PointArray::Uint pos) const {
         if (pos >= _size)  // validity check
             return nullptr;
         return new Point(_arr[pos].getX(), _arr[pos].getY());
@@ -127,7 +127,7 @@ namespace xi {
             return;
         }
 
-        auto *newArray = new Point[n];
+        auto* newArray = new Point[n];
         if (_arr != nullptr) {
             for (int i = 0; i < std::min(n, _size); ++i) {  // copy elements to new array
                 newArray[i] = _arr[i];
